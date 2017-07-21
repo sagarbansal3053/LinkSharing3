@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="linksharing@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="linksharing">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="blog"/>
+    <schema id="4" parent="1" name="hibernatedatabase"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="phototest"/>
+    <schema id="9" parent="1" name="sagar_test"/>
+    <schema id="10" parent="1" name="sampledb"/>
+    <table id="11" parent="2" name="DocumentResource"/>
+    <table id="12" parent="2" name="LinkResource"/>
+    <table id="13" parent="2" name="Subscription"/>
+    <table id="14" parent="2" name="Topic"/>
+    <table id="15" parent="2" name="User"/>
+    <column id="16" parent="11" name="resource_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="11" name="dateCreated">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="18" parent="11" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="11" name="lastUpdate">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="20" parent="11" name="filePath">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="21" parent="11" name="resource_join_user">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="22" parent="11" name="resource_join_topic">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="23" parent="11" name="FK61bh5xs79e1s1rdpd7ldgdkyt">
+      <ColNames>resource_join_user</ColNames>
+    </index>
+    <index id="24" parent="11" name="FKbxi99ur2edti90cynygl71ow0">
+      <ColNames>resource_join_topic</ColNames>
+    </index>
+    <key id="25" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>resource_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="11" name="FK61bh5xs79e1s1rdpd7ldgdkyt">
+      <ColNames>resource_join_user</ColNames>
+      <RefSchemaName>linksharing</RefSchemaName>
+      <RefTableName>User</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="27" parent="11" name="FKbxi99ur2edti90cynygl71ow0">
+      <ColNames>resource_join_topic</ColNames>
+      <RefSchemaName>linksharing</RefSchemaName>
+      <RefTableName>Topic</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="28" parent="12" name="resource_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="12" name="dateCreated">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="30" parent="12" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="31" parent="12" name="lastUpdate">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="32" parent="12" name="url">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="33" parent="12" name="resource_join_user">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="12" name="resource_join_topic">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="35" parent="12" name="FKexbte8tb2v9hv1wol5ughk36a">
+      <ColNames>resource_join_topic</ColNames>
+    </index>
+    <index id="36" parent="12" name="FKl8scmkwjrr71x2igw31enb2d3">
+      <ColNames>resource_join_user</ColNames>
+    </index>
+    <key id="37" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>resource_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="38" parent="12" name="FKl8scmkwjrr71x2igw31enb2d3">
+      <ColNames>resource_join_user</ColNames>
+      <RefSchemaName>linksharing</RefSchemaName>
+      <RefTableName>User</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="39" parent="12" name="FKexbte8tb2v9hv1wol5ughk36a">
+      <ColNames>resource_join_topic</ColNames>
+      <RefSchemaName>linksharing</RefSchemaName>
+      <RefTableName>Topic</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="40" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="13" name="dateCreated">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="42" parent="13" name="seriousness">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="43" parent="13" name="subscription_join_topic">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="44" parent="13" name="subscription_join_user">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="45" parent="13" name="FK30cbw5bnwi6h6qvq3gi408uta">
+      <ColNames>subscription_join_topic</ColNames>
+    </index>
+    <index id="46" parent="13" name="FKrq1boewifvc813ngoiihrov44">
+      <ColNames>subscription_join_user</ColNames>
+    </index>
+    <key id="47" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="13" name="FK30cbw5bnwi6h6qvq3gi408uta">
+      <ColNames>subscription_join_topic</ColNames>
+      <RefSchemaName>linksharing</RefSchemaName>
+      <RefTableName>Topic</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="49" parent="13" name="FKrq1boewifvc813ngoiihrov44">
+      <ColNames>subscription_join_user</ColNames>
+      <RefSchemaName>linksharing</RefSchemaName>
+      <RefTableName>User</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="50" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="14" name="topicdateCreated">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="52" parent="14" name="topiclastUpdated">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="53" parent="14" name="topicname">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="54" parent="14" name="visiblity">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="55" parent="14" name="User_join_column">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="56" parent="14" name="FK9l4yqhoiaj6qwqit2jonpu7ex">
+      <ColNames>User_join_column</ColNames>
+    </index>
+    <key id="57" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="58" parent="14" name="FK9l4yqhoiaj6qwqit2jonpu7ex">
+      <ColNames>User_join_column</ColNames>
+      <RefSchemaName>linksharing</RefSchemaName>
+      <RefTableName>User</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="59" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="60" parent="15" name="active">
+      <Position>2</Position>
+      <DataType>bit(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="15" name="admin">
+      <Position>3</Position>
+      <DataType>bit(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="15" name="dateCreated">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="63" parent="15" name="email">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="64" parent="15" name="fname">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="65" parent="15" name="lastUpdated">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="66" parent="15" name="lname">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="67" parent="15" name="password">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="68" parent="15" name="pic">
+      <Position>10</Position>
+      <DataType>longblob|0</DataType>
+    </column>
+    <column id="69" parent="15" name="username">
+      <Position>11</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="70" parent="15" name="UK_e6gkqunxajvyxl5uctpl2vl2p">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="71" parent="15" name="UK_jreodf78a7pl5qidfh43axdfb">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="73" parent="15" name="UK_e6gkqunxajvyxl5uctpl2vl2p">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>UK_e6gkqunxajvyxl5uctpl2vl2p</UnderlyingIndexName>
+    </key>
+    <key id="74" parent="15" name="UK_jreodf78a7pl5qidfh43axdfb">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>UK_jreodf78a7pl5qidfh43axdfb</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
